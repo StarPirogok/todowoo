@@ -2,6 +2,10 @@
 {% if user.is_authenticated %}
     Logged In as {{ user.username }}
 
+    <a href='{% url 'createtodo' %}'>Create new task</a>
+    <a href='{% url 'currenttodos' %}'>Current tasks</a>
+    <a href='{% url 'completedtodos' %}'>Completed tasks</a>
+
     <form action='{% url 'logoutuser' %}' method='POST'>
         {% csrf_token %}
     <button type="submit">Logout</button>
